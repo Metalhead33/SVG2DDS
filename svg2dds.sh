@@ -15,15 +15,15 @@ function S2TC {
 	rm "$name"
 	rm "${name/.png/.tga}"
 }
-if [ -z "$1" ]
+if [ -z "$1" ]; then
 	echo -e 'You need to define compression method: NVENC or S2TC.\n(Use NVENC only if you have an nVidia card!)'
 	exit 1
 fi
-if [ "$1" -ne "NVENC" ] && [ "$1" -ne "S2TC" ]
+if [ "$1" -ne "NVENC" ] && [ "$1" -ne "S2TC" ]; then
 	echo -e 'You need to define compression method: NVENC or S2TC.\n(Use NVENC only if you have an nVidia card!)'
 	exit 1
 fi
-if [ -z "$2" ]
+if [ -z "$2" ]; then
 	echo -e 'Please define an image as an input to convert.'
 	exit 1
 fi
