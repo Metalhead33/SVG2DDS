@@ -36,7 +36,7 @@ base="$(basename -s .svg "$filename")"
 inkscape --export-type="png" "$filename"
 case "$method" in
 NVENC|S2TC)
-	$method "$base"
+	$method "$base" "$output"
 ;;
 *)
   die "Unsupported format: $method"
