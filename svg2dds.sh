@@ -24,7 +24,7 @@ S2TC() {
 	rm "$tgafile"
 }
 
-[ $# -lt 3 ] && die "Usage: $(basename "$0") NVENC|S2TC <input.svg> <output.dds>"
+[ $# -lt 5 ] && die "Usage: $(basename "$0") NVENC|S2TC <input.svg> <output.dds> <width> <height>"
 
 method="$1"
 shift
@@ -32,9 +32,12 @@ filename="$1"
 shift
 output="$1"
 shift
+width="$1"
+shift
+height="$1"
 pngfile="$(mktemp --suffix=.png)"
 
-inkscape --export-type="png" --export-filename="$pngfile" "$filename"
+inkscape --export-type="png" --export-width="$width" --export-height="$height" --export-filename="$pngfile" "$filename"
 case "$method" in
 NVENC|S2TC)
 	$method "$pngfile" "$output"
