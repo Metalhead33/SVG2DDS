@@ -8,7 +8,7 @@ die() {
 NVENC() {
 	name="$1"
     nvcompress -bc1 "$name.png" "$name.dds"
-	rm "$name"
+	rm "$name.png"
 }
 
 S2TC() {
