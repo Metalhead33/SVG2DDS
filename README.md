@@ -6,4 +6,4 @@ Requires Inkscape first and foremost, and either [Nvidia Texture Tools](https://
 
 **Usage:**
 
-    ./svg2dds.sh <S2TC or NVENC> <name of the file you want to convert.svg> <output destination.dds>
+    ./svg2dds.sh NVENC|S2TC <input.svg> <output.dds> <width> <height> <DXT1|DXT3|DXT5>"
