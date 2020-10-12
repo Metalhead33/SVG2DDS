@@ -11,14 +11,14 @@ NVENC() {
 	format="$3"
 	case $format in
 	DXT1)
-		nvcompress -bc1 "$pngfile" "$output"
+		nvcompress -nocuda -bc1 "$pngfile" "$output"
 		;;
 	DXT3)
-		nvcompress -bc2 "$pngfile" "$output"
+		nvcompress -nocuda -bc2 "$pngfile" "$output"
 		break
 		;;
 	DXT5)
-		nvcompress -bc3 "$pngfile" "$output"
+		nvcompress -nocuda -bc3 "$pngfile" "$output"
 		break
 		;;
 	*)
